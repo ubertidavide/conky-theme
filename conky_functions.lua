@@ -2,6 +2,7 @@ function conky_run_shell_command(command)
     local handle = io.popen(command)
     local result = handle:read("*a")
     handle:close()
+
     return result:gsub("^%s*(.-)%s*$", "%1")
 end
 
